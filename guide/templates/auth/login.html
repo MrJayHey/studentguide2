@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'css/auth/login.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+    <form method="post">
+        {% csrf_token %}
+        <h1>Для этого сервиса необходимо войти
+            в аккаунт или зарегистрироваться</h1>
+            {% if form.errors %}
+                <div class="error">
+                    <p>Пожалуйста, исправьте следующие ошибки:</p>
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ field }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <label>Логин/почта?</label>
+            <div class="input">
+                <input type="text" name="username" placeholder="">
+            </div>
+            <label>Пароль</label>
+            <div class="input">
+                <input type="password" name="password" placeholder="">
+            </div>
+              <center><button type="submit">Вход</button></center>
+                <a href="{% url 'register' %}">Еще нет аккаунта?</a> 
+        </form>
+    </div>
+</body>
+</html>

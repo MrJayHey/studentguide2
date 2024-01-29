@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/auth/register.css' %}">
+
+</head>
+<body>
+
+  <form method="POST" class="registration-form">
+    {% csrf_token %}
+    <h2>Зарегистрируйтесь</h2>
+    <div class="container">
+    <div class="form-group">
+        <label for="login">Почта</label>
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        <label for="group">Группа</label>
+        {{ form.study_group }}
+    </div>
+    <div class="form-group">
+        <label>ФИО</label>
+        <div class="surname-group">
+            {{ form.last_name }}
+            {{ form.first_name }}
+            {{ form.surname }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Номер телефона</label>
+        <div>
+            {{ form.phone }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Придумайте пароль</label>
+        <div>
+            {{ form.password1 }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Повторите пароль</label>
+        <div>
+            {{ form.password2 }}
+        </div>
+    </div>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>Ошибка!</strong> Пожалуйста, исправьте следующие ошибки:
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ field.label }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <button class="registration-button" type="submit">Регистрация</button>
+  </div>
+</form>
+
+      <script>
+        function displayFileName(input) {
+            var fileInput = input.files[0];
+            var fileName = document.getElementById('file-name');
+            fileName.textContent = fileInput.name;
+        }
+    </script>
+</body>
+</html>

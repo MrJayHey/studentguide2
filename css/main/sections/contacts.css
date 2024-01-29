@@ -1,0 +1,21 @@
+.main-contacts.is-active {
+    display: flex;
+}
+
+.main-contacts {
+    display: none;
+    width: 680px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 148px;
+    padding-bottom: 128px;
+
+}
+
+.main-contacts-block_2 {
+    margin-top: 64px;
+    background: #4B6EB9;
+    color: white;
+}
+
+
