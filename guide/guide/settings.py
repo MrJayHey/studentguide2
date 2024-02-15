@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'Django',
         'USER': 'postgres',
         'PASSWORD': 'root',
-        'HOST': 'localhost',  # localhost for debug, db for deploy
+        'HOST': 'db',  # localhost for debug, db for deploy
         # Use .env later please)
         'PORT': 5432,
     }
