@@ -22,4 +22,4 @@ services:
     volumes:
       - static:/usr/share/nginx/html/static
     ports:
-      - 8000:80
+      - 80:80
