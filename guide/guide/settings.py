@@ -88,7 +88,8 @@ DATABASES = {
         'NAME': 'Django',
         'USER': 'postgres',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'HOST': 'localhost',  # localhost for debug, db for deploy
+        # Use .env later please)
         'PORT': 5432,
     }
 }
@@ -132,7 +133,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = '/app/staticfiles/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -146,10 +148,12 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#new variables
+# New variables
+
+CSRF_TRUSTED_ORIGINS = ['https://subdomain.example.com', 'http://localhost:8000']
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),  # Path to the locale directory in your project directory
+    os.path.join(BASE_DIR, 'locale'),
 ]
 
 AUTH_USER_MODEL = 'site_auth.CustomUser'
