@@ -2,8 +2,6 @@
 
 
 1. [Установите Docker на сервер](https://docs.docker.com/engine/install/ubuntu/), если он еще не установлен;
-
-
 2. Клонируйте репозиторий:
 ```bash
 git clone <ссылка-на-репозиторий-гит>
@@ -16,9 +14,7 @@ cd studentguide2
 ```bash
 sudo docker-compose up -d --build
 ```
-5. Поочередно выполните команды для применения миграций, сборки статики и создания суперпользователя:
+5. Выполните команду создания суперпользователя:
 ```bash
-sudo docker exec -it studentguide2-backend-1 python manage.py migrate
-sudo docker exec -it studentguide2-backend-1 python manage.py collectstatic --no-input
-sudo docker exec -it studentguide2-backend-1 python manage.py createsuperuser
+sudo docker exec -it studentguide2-backend python manage.py createsuperuser
 ```
