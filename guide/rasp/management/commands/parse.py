@@ -24,6 +24,7 @@ async def save_to_database():
     json_file_path = os.path.join(settings.BASE_DIR, 'rasp', 'data.json')
     groups_file_path = os.path.join(settings.BASE_DIR, 'rasp', 'groups.json')
 
+    print('Started parsing process...')
     # Load groups data
     with open(groups_file_path, encoding='utf-8') as f:
         data = json.load(f)
@@ -71,7 +72,7 @@ async def save_to_database():
                         existing_pair = await sync_to_async(Pair.objects.filter(day=schedule.day, lesson_index=schedule.lesson_index, group=group).exists)()
                         if not existing_pair:
                             await sync_to_async(schedule.save)()
-                            print('Saved!')
+                            # print('Saved!')
                         else:
                             continue
 
