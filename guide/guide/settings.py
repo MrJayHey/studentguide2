@@ -133,7 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # New variables
 
-CSRF_TRUSTED_ORIGINS = ['https://subdomain.example.com', 'http://localhost:8000']
+CSRF_TRUSTED_ORIGINS = ['https://itcpd.ru', 'http://localhost:8000']
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
