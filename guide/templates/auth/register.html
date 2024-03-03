@@ -8,10 +8,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="{% static 'css/auth/register.css' %}">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 
 </head>
 <body>
+ <header class="header">
+        <nav class="header__navbar">
+            <div class="header__navbar-menu" id="nav-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="header__navbar-list">
+                <li class="header__navbar-item">
+                    <a href="#" class="header__navbar-item-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h32v32H0z"></path>
+                                <g stroke="currentColor" transform="rotate(-45 18.036 2.636)">
+                                    <path d="M7.423 15.5h1v5.923h-1z"></path>
+                                    <circle cx="7.5" cy="7.5" r="7.5"></circle>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </li>
 
+                <li class="header__navbar-item">
+                    <a href="#" class="header__navbar-item-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h32v32H0z"></path>
+                                <path
+                                    d="M20.848 11.348a4.848 4.848 0 1 1-9.696 0 4.848 4.848 0 0 1 9.696 0zm-1.622 7.807h-6.451a7.275 7.275 0 0 0-7.276 7.274h21a7.274 7.274 0 0 0-7.273-7.274z"
+                                    stroke="currentColor"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+
+                <li class="header__navbar-item">
+                    <a href="#" class="header__navbar-item-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M0 0h32v32H0z"></path>
+                                <g stroke="currentColor">
+                                    <path stroke-linecap="square"
+                                        d="M5.55 12.5h20.9M8.536 16.25h13.928m-13.893 3h6.858M9.25 6.5v3m13.958-3v3">
+                                    </path>
+                                    <path d="M5.5 8.5h21v17h-21z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+
+                <li class="header__navbar-item">
+                    <a href="#" class="header__navbar-item-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                            fill="currentColor">
+                            <path transform="translate(2 8.85)"
+                                d="M4.205 4.023L.575 7.544l3.72 3.608c2.715 2.635 6.284 3.953 9.855 3.953 3.568 0 7.137-1.318 9.855-3.953l3.628-3.521-3.72-3.608C21.195 1.389 17.627.072 14.058.072c-3.569 0-7.137 1.317-9.853 3.951zm.735 6.501l-3.073-2.98L4.85 4.651c5.077-4.924 13.341-4.924 18.418 0l3.072 2.98-2.982 2.893c-2.539 2.462-5.874 3.693-9.208 3.693-3.335 0-6.672-1.231-9.21-3.693z">
+                            </path>
+                            <path transform="translate(12 11.85)"
+                                d="M.595 3.211a.376.376 0 1 0 .75 0c0-1.036.844-1.878 1.881-1.878a.376.376 0 0 0 0-.752 2.633 2.633 0 0 0-2.631 2.63z">
+                            </path>
+                            <path transform="translate(10 9.85)"
+                                d="M.091 5.835c0 2.902 2.698 5.261 6.013 5.261s6.013-2.359 6.013-5.261c0-2.899-2.696-5.261-6.013-5.261C2.789.574.091 2.936.091 5.835zm.925 0c0-2.453 2.282-4.452 5.088-4.452 2.805 0 5.088 1.999 5.088 4.452 0 2.456-2.283 4.453-5.088 4.453-2.806 0-5.088-1.997-5.088-4.453z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="header__navbar-links">
+                <ul class="header__navbar-links__list">
+                    <li class="header__navbar-links__item"><<a href="{% url 'hostels' %}"><span class="header__navbar-links__link dormlist-btn" id="dormlist-btn">Общежития</span></a></li>
+                    <li class="header__navbar-links__item"><a href="{% url 'links' %}" class="'header__navbar-links__link'">Полезные ссылки</a></li>
+                    <li class="header__navbar-links__item"><a href="{% url 'teachers' %}" class="header__navbar-links__link">Требования преподователей</a></li>
+                    <li class="header__navbar-links__item"><a href="{% url 'rasp' %}" class="header__navbar-links__link">Расписание</a></li>
+                    <li class="header__navbar-links__item"><a href="#" class="header__navbar-links__link">Личный кабинет</a></li>
+                </ul>
+                <ul class="header__navbar-links__dorms-list">
+                    <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Информация</a></li>
+                    <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Общежития</a></li>
+                    <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Документы</a></li>
+                    <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Быт</a></li>
+                    <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+ </header>
+ <img src="{% static 'img/mainpage_background.jpg' %}" alt="dormitory_background" class="header__background" >
+            <div class="header__title">
+                <h1 class="header__title-text">
+                    Помощник для студентов и <br> абитуриентов Московского политеха
+                </h1>
+            </div>
   <form method="POST" class="registration-form">
     {% csrf_token %}
     <h2>Зарегистрируйтесь</h2>
