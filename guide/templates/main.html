@@ -103,7 +103,7 @@
         <div class="header__wrapper">
             <div class="header__title">
                 <h1 class="header__title-text">
-                    Помощник для студентов и <br> абитуриентов Московского политеха
+                    Помощник для студентов и абитуриентов <br> Московского политеха
                 </h1>
             </div>
             <div class="header__links">
@@ -120,35 +120,41 @@
                
             </div>
         </div>
-
-        <img src="{% static 'img/mainpage_polytech-logo.png' %}" alt="" class="header__logo">
     </header>
 
     <main>
         <section class="pages">
             <ul class="pages__list">
-                <li class="pages__item page">
-                    <h2 class="page__heading">Расписание</h2>
-                    <img src="{% static 'img/calendar.png' %}" alt="" class="page__icon">
-                    <p class="page__text">Какой-то текст про расписание...</p>
+                <li class="page">
+                    <div>
+                        <h2 class="page__heading">Расписание</h2>
+                        <img src="{% static 'img/calendar.png' %}" alt="" class="page__icon">
+                        <p class="page__text">Актуальное расписание для вашего комфорта и органицзации времени</p>
+                    </div>
                     <a href="{% url 'rasp' %}" class="page__button">Подробнее</a>
                 </li>
-                <li class="pages__item page">
-                    <h2 class="page__heading">Общежития</h2>
-                    <img src="{% static 'img/dormitories.png' %}" alt="" class="page__icon">
-                    <p class="page__text">Какой-то текст про общежития...</p>
+                <li class="page">
+                    <div>
+                        <h2 class="page__heading">Общежития</h2>
+                        <img src="{% static 'img/dormitories.png' %}" alt="" class="page__icon">
+                        <p class="page__text">Уютные общежития: ваш дом вдали от дома</p>
+                    </div>
                     <a href="{% url 'hostels' %}" class="page__button">Подробнее</a>
                 </li>
-                <li class="pages__item page">
-                    <h2 class="page__heading">Требования преподавателей</h2>
-                    <img src="{% static 'img/teacher.png' %}" alt="" class="page__icon">
-                    <p class="page__text">Какой-то текст про требования...</p>
+                <li class="page">
+                    <div>
+                        <h2 class="page__heading">Требования преподавателей</h2>
+                        <img src="{% static 'img/teacher.png' %}" alt="" class="page__icon">
+                        <p class="page__text">Ваш путеводитель к знаниям и ресурсам</p>
+                    </div>
                     <a href="{% url 'teachers' %}" class="page__button">Подробнее</a>
                 </li>
-                <li class="pages__item page">
-                    <h2 class="page__heading">Полезные ссылки</h2>
-                    <img src="{% static 'img/links.png' %}" alt="" class="page__icon">
-                    <p class="page__text">Какой-то текст про ссылки...</p>
+                <li class="page">
+                    <div>
+                        <h2 class="page__heading">Полезные ссылки</h2>
+                        <img src="{% static 'img/links.png' %}" alt="" class="page__icon">
+                        <p class="page__text">Основные требования преподователя к студентам: как достичь успеха в учебе</p>
+                    </div>
                     <a href="{% url 'links' %}" class="page__button">Подробнее</a>
                 </li>
             </ul>
