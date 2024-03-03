@@ -9,7 +9,8 @@ dotenv.load_dotenv(dotenv_path=BASE_DIR.parent / '.env')
 SECRET_KEY = 'django-insecure-$kkf%!jh+_t&ts^qnq3+(8_&y%t9hj(ay4%)gl#wk(gsk@a$l^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', default='False') == 'True'
+# DEBUG = os.getenv('DEBUG', default='False') == 'True'
+DEBUG = 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
 
@@ -72,7 +73,7 @@ DATABASES = {
         'NAME': 'Django',
         'USER': 'postgres',
         'PASSWORD': 'root',
-        'HOST': 'db',  # localhost for debug, db for deploy
+        'HOST': 'localhost',  # localhost for debug, db for deploy
         # Use .env later please)
         'PORT': 5432,
     }
