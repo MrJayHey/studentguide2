@@ -5,8 +5,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 1000px;
-    padding: 0 80px;
+    height: 100vh;
+    padding: 0 0px;
 }
 
 .header__background {
@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    filter: blur(3px);
+    filter: blur(7px) brightness(50%);
 }
 
 .header__logo {
@@ -186,8 +186,9 @@
     text-align: center;
     font-weight: 700;
     color: #FFFFFF;
-    font-size: 70px;
-    line-height: 155px;
+    font-size: 40px;
+    /*line-height: 50px;*/
+    line-height: 50px;
 }
 
 .header__links {
@@ -196,11 +197,12 @@
 }
 
 .header__link {
-    font-size: 36px;
+    font-size: 25px;
     background: white;
     padding: 20px 35px;
-    width: 305px;
+    width: 250px;
     transition: 0.5s;
+    border-radius: 15px;
 }
 
 .header__link:hover {
@@ -253,7 +255,7 @@
 
 @media (max-height: 892px) {
     .header__wrapper {
-        padding-top: 234px;
+        padding-top: 0vh;
     }
 
     .header__navbar-list {
