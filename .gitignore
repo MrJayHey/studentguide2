@@ -4,3 +4,4 @@ venv/
 .idea
 static/
 /static
+**/__pycache__

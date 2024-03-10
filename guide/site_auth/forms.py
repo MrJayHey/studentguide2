@@ -10,16 +10,18 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = ('email', 'first_name', 'last_name', 'surname', 'study_group', 'password1', 'password2', 'phone')
+        fields = ('email', 'first_name', 'last_name', 'surname', 'study_group', 'password1', 'password2', 'phone', 'is_active', 'is_staff')
         widgets = {
-            'email': forms.EmailInput(attrs={'id': 'login', 'name': 'login', 'class': 'myemail'}),
-            'study_group': forms.TextInput(attrs={'id': 'group', 'name': 'group', 'placeholder': '221-325'}),
-            'first_name': forms.TextInput(attrs={'id': 'surname2', 'name': 'surname2', 'placeholder': 'Андрей'}),
-            'last_name': forms.TextInput(attrs={'id': 'surname1', 'name': 'surname1', 'placeholder': 'Василиванов'}),
-            'surname': forms.TextInput(attrs={'id': 'surname3', 'name': 'surname3', 'placeholder': 'Игоревич'}),
-            'phone': forms.TextInput(attrs={'id': 'phone', 'name': 'phone', 'placeholder': '+7 1234567890'}),
-            'password1': forms.PasswordInput(attrs={'class': 'mypassword', 'placeholder': 'Enter password'}),
-            'password2': forms.PasswordInput(attrs={'class': 'mypassword', 'placeholder': 'Confirm password'}),
+            'email': forms.EmailInput(attrs={'id': 'login', 'name': 'login', 'class': 'input-field'}),
+            'study_group': forms.TextInput(attrs={'id': 'group', 'name': 'group', 'placeholder': '221-325', 'class': 'input-field'}),
+            'first_name': forms.TextInput(attrs={'id': 'surname2', 'name': 'surname2', 'placeholder': 'Андрей', 'class': 'input-field fullname'}),
+            'last_name': forms.TextInput(attrs={'id': 'surname1', 'name': 'surname1', 'placeholder': 'Василиванов', 'class': 'input-field fullname'}),
+            'surname': forms.TextInput(attrs={'id': 'surname3', 'name': 'surname3', 'placeholder': 'Игоревич', 'class': 'input-field fullname'}),
+            'phone': forms.TextInput(attrs={'id': 'phone', 'name': 'phone', 'placeholder': '+7 1234567890', 'class': 'input-field'}),
+            'password1': forms.PasswordInput(attrs={'placeholder': 'Enter password'}),
+            'password2': forms.PasswordInput(attrs={'placeholder': 'Confirm password'}),
+            'is_active': forms.RadioSelect(attrs={'value':'Я староста', 'name':'role'}),
+            'is_staff': forms.RadioSelect(attrs={'value':'Я профорг', 'name':'role'}),
         }
         
         def __init__(self, *args, **kwargs):

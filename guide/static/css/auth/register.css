@@ -9,13 +9,13 @@
    justify-content: center;
    align-items: center;
    height: 100vh;
-   color: #fff;
+   color: #000000;
  }
 
  .registration-form {
    width: 800px;
    margin: 0 auto;
-   background: #4B6EB9;
+   background: #F1F1EF;
    border-radius: 20px;
    margin-top: 10px;
    font-size: 10px;
@@ -38,9 +38,9 @@
    bottom: -40px;
    left: 0;
    width: 450px; 
-   background-color: #FFFFFF;
+   background-color: #000000;
    margin-left: 180px;
-   border: 1px solid #FFFFFF;
+   border: 1px solid #000000;
 
  }
 
@@ -59,31 +59,6 @@
    font-size: 16px;
    
  }
- 
- input[type="text"], input[type="file"] {
-   display: block;
-   width: 100%;
-   padding: 10px;
-   /* height: 35px; */
-   border-radius: 10px;
-   border: none;
- }
- input[type="file"]::-webkit-file-upload-button {
-   display: none;
-   background-color: #000;
-   color: #fff;
-   border: none;
-   border-radius: 10px;
-   cursor: pointer;
-}
-input[type="file"] {
-   display: block;
-   width: 100%;
-   padding: 10px;
-   border-radius: 5px;
-   border: none;
-   background-color: #fff;
-}
 
 label[for="file"] {
    display: block;
@@ -116,12 +91,12 @@ label[for="file"] {
    accent-color: #000;
  }
  
- .surname-group {
+ .flex {
    display: flex;
  }
  
- .surname-group input[type="text"] {
-   width: calc(100% / 3);
+.fullname{
+   width: 100%;
    margin-right: 5px;
  }
  
@@ -147,47 +122,6 @@ label[for="file"] {
   position: absolute;
   top: 30px;
   left: 10px;
- }
- 
- .myemail{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline-style: none;
-  outline: none;
- }
- 
- .mypassword{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  height: 60px;
- }
-
- #id_password1{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline: none;
- }
- #id_password2{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline: none;
  }
 
  .error-message {
@@ -224,6 +158,16 @@ label[for="file"] {
     display: flex;
     width: 100%;
 }
-.container{
-
+.input-field, #id_password1, #id_password2{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5)
+}
+.input-field, #id_password1, #id_password2, :focus{
+  outline-color: gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

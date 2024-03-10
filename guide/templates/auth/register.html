@@ -108,10 +108,10 @@
             </div>
   <form method="POST" class="registration-form">
     {% csrf_token %}
-    <h2>Зарегистрируйтесь</h2>
+    <h2>Регистрация</h2>
     <div class="container">
     <div class="form-group">
-        <label for="login">Почта</label>
+        <label for="login">Почтовый адрес</label>
         {{ form.email }}
     </div>
     <div class="form-group">
@@ -119,8 +119,12 @@
         {{ form.study_group }}
     </div>
     <div class="form-group">
-        <label>ФИО</label>
-        <div class="surname-group">
+        <div class="flex">
+            <label class="fullname">Фамилия</label>
+            <label class="fullname">Имя</label>
+            <label class="fullname">Отчество</label>
+        </div>
+        <div class="flex">
             {{ form.last_name }}
             {{ form.first_name }}
             {{ form.surname }}
@@ -133,6 +137,12 @@
         </div>
     </div>
     <div class="form-group">
+        <label>Загрузите фотографию студенческого билета</label>
+        <div>
+            {{ form.photo }}
+        </div>
+    </div>
+    <div class="form-group">
         <label>Придумайте пароль</label>
         <div>
             {{ form.password1 }}
@@ -142,6 +152,16 @@
         <label>Повторите пароль</label>
         <div>
             {{ form.password2 }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            {{ form.is_active }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            {{ form.is_staff }}
         </div>
     </div>
 
