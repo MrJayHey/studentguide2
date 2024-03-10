@@ -13,11 +13,12 @@
  }
 
  .registration-form {
-   width: 811px;
+   width: 800px;
    margin: 0 auto;
    background: #4B6EB9;
    border-radius: 20px;
-   margin-top: 70px;
+   margin-top: 10px;
+   font-size: 10px;
 
 
  }
@@ -212,23 +213,17 @@ label[for="file"] {
     z-index: -1;
     filter: blur(5px);
 }
-.header__title-text {
-    font-weight: 700;
-    color: #FFFFFF;
-    font-size: 70px;
-    line-height: 155px;
-    position:absolute;
-    top: 200px;
-   left: 100px;
-   bottom: 0;
-   right: 0;
-   z-index: -1;
-   text-align:center;
-   overflow: hidden;
-   display: inline-block;
-   width:90%;
-   filter: blur(5px);
+
+
+.footer {
+    background: #1e1e1e;
+    font-family: "Verdana", sans-serif;
+    font-weight: 400;
+    top:700px;
+    position: absolute;
+    display: flex;
+    width: 100%;
 }
 .container{
-    height:450px;
+
 }
