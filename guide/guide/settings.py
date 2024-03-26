@@ -23,12 +23,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     # myapps
     'hostels',
     'links',
     'site_auth',
     'teachers',
-    'rasp',  
+    'rasp',
+    'RaspAPI'
+
 ]
 
 MIDDLEWARE = [

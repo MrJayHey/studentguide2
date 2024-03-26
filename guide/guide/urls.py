@@ -21,6 +21,10 @@ from links.views import LinksView
 from hostels.views import HostelsListView
 from teachers.views import TeachersView
 from rasp.views import RaspView
+from RaspAPI.views import RaspGRUPAPIView
+from RaspAPI.views import UpdateAPIView
+from RaspAPI.views import GRUPAPIView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Main.as_view(), name='main'),
@@ -29,4 +33,7 @@ urlpatterns = [
     path('hostels/', HostelsListView.as_view(), name='hostels'),
     path('rasp/', RaspView.as_view(), name='rasp'),
     path('teachers/', TeachersView.as_view(), name='teachers'),
+    path('api/V1/getRasp/', RaspGRUPAPIView.as_view()),
+    path('api/V1/getGroups/', GRUPAPIView.as_view()),
+    path('api/V1/Update/', UpdateAPIView.as_view()),
 ]
