@@ -30,7 +30,9 @@
 	text-align: left;
 	margin-top: 10px;
 }
-
+.page div {
+	max-width: 80%;
+}
 .page__icon {
 	width: 90px;
 	position: absolute;

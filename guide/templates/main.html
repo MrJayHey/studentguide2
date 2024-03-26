@@ -12,7 +12,30 @@
 
 <body>
     <header class="header">
-        <nav class="header__navbar">
+        <img src="{% static 'img/mainpage_background.jpg' %}" alt="dormitory_background" class="header__background">
+
+        <div class="header__wrapper">
+            <div class="header__title">
+                <h1 class="header__title-text">
+                    Помощник для студентов и абитуриентов <br> Московского политеха
+                </h1>
+            </div>
+            <div class="header__links">
+                {% if user.is_authenticated %}
+                    <li class="header__title">
+                        <h1 class="header__title-text" href="">Пользователь: {{ user.first_name }} {{ user.last_name }}</h1>
+                        <a href="{% url 'logout' %}" class="header__link">Выйти</a>
+                    </li>
+                {% else %}
+                <a href="{% url 'login' %}" class="header__link">Авторизация</a>
+                <a href="{% url 'register' %}" class="header__link">Регистрация</a>
+                
+                {% endif %}
+               
+            </div>
+        </div>
+    </header>
+    <nav class="header__navbar">
             <div class="header__navbar-menu" id="nav-btn">
                 <span></span>
                 <span></span>
@@ -69,31 +92,6 @@
                 </ul>
             </div>
         </nav>
-
-        <img src="{% static 'img/mainpage_background.jpg' %}" alt="dormitory_background" class="header__background">
-
-        <div class="header__wrapper">
-            <div class="header__title">
-                <h1 class="header__title-text">
-                    Помощник для студентов и абитуриентов <br> Московского политеха
-                </h1>
-            </div>
-            <div class="header__links">
-                {% if user.is_authenticated %}
-                    <li class="header__title">
-                        <h1 class="header__title-text" href="">Пользователь: {{ user.first_name }} {{ user.last_name }}</h1>
-                        <a href="{% url 'logout' %}" class="header__link">Выйти</a>
-                    </li>
-                {% else %}
-                <a href="{% url 'login' %}" class="header__link">Авторизация</a>
-                <a href="{% url 'register' %}" class="header__link">Регистрация</a>
-                
-                {% endif %}
-               
-            </div>
-        </div>
-    </header>
-
     <main>
         <section class="pages">
             <ul class="pages__list">
