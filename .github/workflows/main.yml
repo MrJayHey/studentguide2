@@ -74,7 +74,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          password: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd studentguide2
             sudo docker compose -f docker-compose.production.yml pull
