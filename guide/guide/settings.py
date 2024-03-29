@@ -4,7 +4,9 @@ import dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv.load_dotenv(dotenv_path=BASE_DIR.parent / '.env')
+mode = 'debug'  # 'production' or 'debug'
+dotenv_path = BASE_DIR.parent / f'{mode}.env'
+dotenv.load_dotenv(dotenv_path=dotenv_path, override=True)
 
 SECRET_KEY = 'django-insecure-$kkf%!jh+_t&ts^qnq3+(8_&y%t9hj(ay4%)gl#wk(gsk@a$l^'
 
@@ -73,12 +75,11 @@ WSGI_APPLICATION = 'guide.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Django',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # localhost for debug, db for deploy
-        # Use .env later please)
-        'PORT': 5432,
+        'NAME': os.getenv('POSTGRES_DB', default='Django'),
+        'USER': os.getenv('POSTGRES_USER', default='postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='root'),
+        'HOST': os.getenv('DB_HOST', default='localhost'),
+        'PORT': os.getenv('DB_PORT', default='5432'),
     }
 }
 
