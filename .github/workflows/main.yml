@@ -48,6 +48,17 @@ jobs:
           push: true
           tags: dew77/studentguide2_gateway:latest
 
+  copy_static_to_gateway_container:
+    name: Copy static files to gateway container
+    runs-on: ubuntu-latest
+    needs:
+      - build_gateway_and_push_to_docker_hub
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Copy static files to gateway container
+        run: docker cp ./guide/static/. studentguide2-gateway-1:/app/static/
+
   deploy:
     runs-on: ubuntu-latest
     needs:
