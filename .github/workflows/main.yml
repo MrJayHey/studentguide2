@@ -67,7 +67,7 @@ jobs:
           echo "Setting mode to 'production' in guide/settings.py"
           pwd
           ls
-          sed -i "s/mode = 'debug'/mode = 'production'/" settings.py
+          sed -i "s/mode = 'debug'/mode = 'production'/" guide/settings.py
         working-directory: ${{ github.workspace }}/guide
       - name: Executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
