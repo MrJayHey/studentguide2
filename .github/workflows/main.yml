@@ -65,7 +65,7 @@ jobs:
       - name: Set mode to production in settings.py
         run: |
           echo "Setting mode to 'production' in guide/settings.py"
-          sed -i "s/mode = 'debug'/mode = 'production'/" studentguide2/guide/settings.py
+          sed -i "s/mode = 'debug'/mode = 'production'/" guide/settings.py
         working-directory: studentguide2
       - name: Executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
