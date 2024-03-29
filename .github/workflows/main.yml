@@ -80,13 +80,14 @@ jobs:
           password: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd studentguide2
-            sudo docker cp ./guide/static/. gateway:/usr/share/nginx/html/static/
             sudo docker compose -f docker-compose.production.yml pull
             sudo docker compose -f docker-compose.production.yml down
             sudo docker compose -f docker-compose.production.yml up -d
-            sleep 30
+            sleep 10
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
             sleep 5
+            sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/static/. /usr/share/nginx/html/static/
+
           
   send_message:
     runs-on: ubuntu-latest
