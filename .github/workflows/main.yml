@@ -81,9 +81,9 @@ jobs:
             sudo docker compose -f docker-compose.production.yml down
             sudo docker compose -f docker-compose.production.yml up -d
             sleep 30
-            sudo docker compose -f docker-compose.production.yml exec studentguide2-backend python manage.py migrate
+            sudo docker compose -f docker-compose.production.yml exec studentguide2-backend-1 python manage.py migrate
             sleep 5
-            sudo docker compose -f docker-compose.production.yml exec studentguide2-backend python manage.py collectstatic --noinput
+            sudo docker compose -f docker-compose.production.yml exec studentguide2-backend-1 python manage.py collectstatic --noinput
           
   send_message:
     runs-on: ubuntu-latest
