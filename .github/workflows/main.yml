@@ -59,7 +59,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          password: ${{ secrets.SSH_PASSPHRASE }}
           source: "docker-compose.production.yml"
           target: "studentguide2"
       - name: Set mode to production in settings.py
