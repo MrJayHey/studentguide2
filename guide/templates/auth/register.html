@@ -79,7 +79,7 @@
             </div>
   <form method="POST" class="registration-form">
     {% csrf_token %}
-    <h2>Регистрация</h2>
+    <h2 class="title title_register">Регистрация</h2>
     <div class="container">
     <div class="form-group">
         <label for="login">Почтовый адрес</label>
@@ -107,12 +107,6 @@
             {{ form.phone }}
         </div>
     </div>
-<!--    <div class="form-group">-->
-<!--        <label>Загрузите фотографию студенческого билета</label>-->
-<!--        <div>-->
-<!--            {{ form.photo }}-->
-<!--        </div>-->
-<!--    </div>-->
     <div class="form-group">
         <label>Придумайте пароль</label>
         <div>
@@ -136,18 +130,20 @@
         </div>
     </div>
 
-    {% if form.errors %}
-    <div class="alert alert-danger">
-        <strong>Ошибка!</strong> Пожалуйста, исправьте следующие ошибки:
-        <ul>
-            {% for field in form %}
-                {% for error in field.errors %}
-                    <li>{{ field.label }}: {{ error }}</li>
+    <div class="flex margin">
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>Ошибка!</strong> Пожалуйста, исправьте следующие ошибки:
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ field.label }}: {{ error }}</li>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
+            </ul>
+        </div>
     {% endif %}
+    </div>
 
     <button class="registration-button" type="submit">Регистрация</button>
   </div>

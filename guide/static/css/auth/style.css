@@ -37,7 +37,6 @@ label{
 .input{
     margin-bottom: 60px;
     padding-left: 139px;
-   
 }
 input{
     height: 35px;
@@ -199,7 +198,7 @@ label[for="file"] {
    margin-right: 5px;
  }
  
- .registration-button {
+ /* .registration-button {
    background-color: #3A3A3A;
    color: #fff;
    height: 73px;
@@ -212,6 +211,6 @@ label[for="file"] {
    cursor: pointer;
    margin-top: 0px;
    margin-left: 226px;
- }
+ } */
 
  
