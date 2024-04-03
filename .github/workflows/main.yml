@@ -89,7 +89,7 @@ jobs:
             sleep 10
             sudo docker exec studentguide2-gateway-1 apt update
             sudo docker exec studentguide2-gateway-1 apt install certbot python3-certbot-nginx -y
-            sudo docker exec studentguide2-gateway-1 certbot --nginx --non-interactive --agree-tos -m webmaster@example.com -d itcpd.ru
+            sudo docker exec studentguide2-gateway-1 certbot --nginx --non-interactive --agree-tos -m admin@mail.ru -d itcpd.ru
 
           
   send_message:
