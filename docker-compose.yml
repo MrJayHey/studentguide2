@@ -7,20 +7,20 @@ volumes:
 services:
   db:
     image: postgres:13.10
-    env_file: .env
+    env_file: production.env
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
     build: ./guide/
-    env_file: .env
+    env_file: production.env
     depends_on:
       - db
     volumes:
-      - static:/app/staticfiles
+      - static:/app/staticfiles/
   gateway:
     build: ./gateway/
     volumes:
-      - static:/usr/share/nginx/html/static
+      - static:/usr/share/nginx/html/static/
     ports:
       - 80:80
       - 443:443
