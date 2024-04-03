@@ -21,6 +21,7 @@ services:
     build: ./gateway/
     volumes:
       - static:/usr/share/nginx/html/static
+      - ./guide/staticfiles:/usr/share/nginx/html/static
     ports:
       - 80:80
       - 443:443
