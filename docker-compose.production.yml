@@ -20,7 +20,7 @@ services:
   gateway:
     image: dew77/studentguide2_gateway
     volumes:
-      - static:/usr/share/nginx/html/static/
+      - static:/app/staticfiles
     ports:
       - 80:80
       - 443:443
