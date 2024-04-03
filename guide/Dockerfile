@@ -14,7 +14,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-RUN chown -R nginx:nginx /app
 RUN chmod -R 755 /app
 
 ENTRYPOINT ["/entrypoint.sh"]
