@@ -2,7 +2,7 @@
 
 apt-get update
 
-sleep 30
+sleep 10
 
 python manage.py migrate
 

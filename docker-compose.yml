@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     volumes:
-      - static:/app/staticfiles/
+      - static:/app/static/
   gateway:
     build: ./gateway/
     volumes:
