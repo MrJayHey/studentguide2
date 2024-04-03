@@ -85,8 +85,6 @@ jobs:
             sudo docker compose -f docker-compose.production.yml up -d
             sleep 10
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
-            sleep 5
-            sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/static/. /usr/share/nginx/html/static/
 
           
   send_message:
