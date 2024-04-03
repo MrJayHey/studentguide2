@@ -86,6 +86,10 @@ jobs:
             sleep 10
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
             sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic --no-input
+            sleep 10
+            sudo docker exec studentguide2-gateway-1 apt update
+            sudo docker exec studentguide2-gateway-1 apt install certbot python3-certbot-nginx -y
+            sudo docker exec studentguide2-gateway-1 certbot --nginx --non-interactive --agree-tos -m webmaster@example.com -d itcpd.ru
 
           
   send_message:
