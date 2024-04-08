@@ -1,20 +1,18 @@
-# Запуск на удаленном сервере:
-
-
-1. [Установите Docker на сервер](https://docs.docker.com/engine/install/ubuntu/), если он еще не установлен;
-2. Клонируйте репозиторий:
+# studentguide2
+## Как отправить обновление на сервер
+1. Переключиться на ветку `deploy`
 ```bash
-git clone <ссылка-на-репозиторий-гит>
-cd studentguide2
+git checkout deploy
 ```
->Не забудьте выбрать нужную ветку, если развертка происходит не с основной ветки
-3. **здесь будет пункт про работу с .env файлами**
-4. Укажите IP сервера в `ALLOWED_HOSTS` в файле `settings.py`
-4. Выполните команду сборки:
+2. Отправить код в ветку `deploy`
 ```bash
-sudo docker-compose up -d --build
+git merge main
 ```
-5. Выполните команду создания суперпользователя:
+3. Отпушить изменения
 ```bash
-sudo docker exec -it studentguide2-backend python manage.py createsuperuser
+git push origin deploy
+```
+4. Вернуться в ветку main
+```bash
+git checkout main
 ```

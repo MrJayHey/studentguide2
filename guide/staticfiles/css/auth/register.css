@@ -3,85 +3,67 @@
    padding: 0;
    box-sizing: border-box;
    font-family: 'Verdana';
-
  }
  body {
-   display: flex;
+   display: block;
    justify-content: center;
    align-items: center;
    height: 100vh;
-   color: #fff;
+   color: #000000;
  }
-
+.footer{
+    display: block;
+}
+.registation_wrapper{
+    display: flex;
+}
  .registration-form {
-   width: 811px;
+   width: 750px;
+     height: 100%;
    margin: 0 auto;
-   background: #4B6EB9;
+   background: #F1F1EF;
    border-radius: 20px;
-   margin-top: 400px;
+   margin-top: 10px;
+   font-size: 10px;
  }
- 
+.grid{
+    display: block;
+}
  h2 {
    text-align: center;
    font-size: 35px;
    font-weight: 700;
    margin-top: 50px;
    position: relative;
-   margin-bottom: 80px;
+   margin-bottom: 40px;
  }
 
  h2::after{
    content: "";
    position: absolute;
-   bottom: -40px;
+   bottom: -20px;
    left: 0;
-   width: 450px; 
-   background-color: #FFFFFF;
-   margin-left: 180px;
-   border: 1px solid #FFFFFF;
+   width: 60%;
+   background-color: #000000;
+   margin-left: 20%;
+   border: 1px solid #000000;
 
  }
 
  .form-group {
-   margin-bottom: 20px;
    margin-left: 166px;
    margin-right: 166px;
    position: relative;
  }
- 
+
  label {
    display: block;
    font-weight: 400;
    font-style: normal;
    margin-bottom: 5px;
    font-size: 16px;
-   
+
  }
- 
- input[type="text"], input[type="file"] {
-   display: block;
-   width: 100%;
-   padding: 10px;
-   /* height: 35px; */
-   border-radius: 10px;
-   border: none;
- }
- input[type="file"]::-webkit-file-upload-button {
-   display: none;
-   background-color: #000;
-   color: #fff;
-   border: none;
-   border-radius: 10px;
-   cursor: pointer;
-}
-input[type="file"] {
-   display: block;
-   width: 100%;
-   padding: 10px;
-   border-radius: 5px;
-   border: none;
-   background-color: #fff;
-}
 
 label[for="file"] {
    display: block;
@@ -99,44 +81,45 @@ label[for="file"] {
    justify-content: space-between;
    margin-top: 42px;
  }
- 
+
  .choice {
   display: flex;
  }
 
- 
+
  .radio-group label {
    margin-right: 5px;
  }
- 
+
  .radio-group input[type="checkbox"] {
    margin-right: 10px;
    accent-color: #000;
  }
- 
- .surname-group {
+
+ .flex {
    display: flex;
  }
- 
- .surname-group input[type="text"] {
-   width: calc(100% / 3);
+
+.fullname{
+   width: 100%;
    margin-right: 5px;
  }
- 
+
  .registration-button {
    background-color: #3A3A3A;
    color: #fff;
-   height: 73px;
-   width: 360px;
-   font-size: 25px;
+   height: 60px;
+   width: 300px;
+   font-size: 20px;
    font-weight: 700;
    padding: 10px 20px;
    border: none;
    border-radius: 20px;
    cursor: pointer;
-   margin-top: 0px;
+   margin-top: 5px;
    margin-left: 226px;
    margin-bottom: 50px;
+     justify-content: center
  }
 
  .input-icon{
@@ -145,47 +128,6 @@ label[for="file"] {
   position: absolute;
   top: 30px;
   left: 10px;
- }
- 
- .myemail{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline-style: none;
-  outline: none;
- }
- 
- .mypassword{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  height: 60px;
- }
-
- #id_password1{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline: none;
- }
- #id_password2{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  /* height: 35px; */
-  border-radius: 10px;
-  border: none;
-  outline: none;
  }
 
  .error-message {
@@ -200,4 +142,27 @@ label[for="file"] {
 
 .error-message li {
   margin-bottom: 5px;
+}
+.header__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(5px);
+}
+.input-field, #id_password1, #id_password2{
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5)
+}
+.input-field, #id_password1, #id_password2, :focus{
+  outline-color: gray;
+  margin-top: 7px;
+  margin-bottom:7px;
 }

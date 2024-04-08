@@ -2,16 +2,16 @@
 
 apt-get update
 
-sleep 30
+sleep 10
 
 python manage.py migrate
 
 python manage.py collectstatic --noinput
 
-playwright install
+# playwright install
 
-playwright install-deps
+# playwright install-deps
 
-python manage.py parse
+# python manage.py parse
 
 exec gunicorn --bind 0.0.0.0:8000 guide.wsgi

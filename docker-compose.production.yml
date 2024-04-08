@@ -1,0 +1,27 @@
+version: '3'
+
+volumes:
+  pg_data:
+  static:
+
+services:
+  db:
+    image: postgres:13.10
+    env_file: production.env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  backend:
+    image: dew77/studentguide2_backend
+    env_file: production.env
+    depends_on:
+      - db
+    volumes:
+      - static:/app/staticfiles/
+  gateway:
+    image: dew77/studentguide2_gateway
+    volumes:
+      - static:/app/staticfiles
+      - ./guide/staticfiles:/usr/share/nginx/html/static
+    ports:
+      - 80:80
+      - 443:443
