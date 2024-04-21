@@ -1,0 +1,59 @@
+{% load static %}
+
+<nav class="header__navbar">
+    <div class="header__navbar-menu" id="nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="header__navbar-list">
+        <li class="header__navbar-item">
+            <a href="#" class="header__navbar-item-link">
+                <img src="{% static 'img/loop.svg' %}" width="32" height="32" viewBox="0 0 32 32">
+            </a>
+        </li>
+        <li class="header__navbar-item">
+            <a href="#" class="header__navbar-item-link">
+                <img src="{% static 'img/user.svg' %}" width="32" height="32" viewBox="0 0 32 32">
+            </a>
+        </li>
+
+        <li class="header__navbar-item">
+            <a href="#" class="header__navbar-item-link">
+                <img src="{% static 'img/schedule.svg' %}" width="32" height="32" viewBox="0 0 32 32">
+            </a>
+        </li>
+        <li class="header__navbar-item">
+            <a href="#" class="header__navbar-item-link">
+                <img src="{% static 'img/mynaui_moon.svg' %}" width="32" height="32" viewBox="0 0 32 32">
+            </a>
+        </li>
+        <li class="header__navbar-item">
+            <a href="#" class="header__navbar-item-link">
+                <img src="{% static 'img/En.svg' %}" width="28" height="28" viewBox="0 0 32 32">
+            </a>
+        </li>
+        <li class="header__navbar-item">
+            <a href="#" class="header__navbar-item-link">
+                <img src="{% static 'img/mospolytech-logo-white.png' %}" width="28" height="28" viewBox="0 0 32 32">
+            </a>
+        </li>
+    </ul>
+
+    <div class="header__navbar-links">
+        <ul class="header__navbar-links__list">
+            <li class="header__navbar-links__item"><<a href="{% url 'hostels' %}"><span class="header__navbar-links__link dormlist-btn" id="dormlist-btn">Общежития</span></a></li>
+            <li class="header__navbar-links__item"><a href="{% url 'links' %}" class="'header__navbar-links__link'">Полезные ссылки</a></li>
+            <li class="header__navbar-links__item"><a href="{% url 'teachers' %}" class="header__navbar-links__link">Требования преподователей</a></li>
+            <li class="header__navbar-links__item"><a href="{% url 'rasp' %}" class="header__navbar-links__link">Расписание</a></li>
+            <li class="header__navbar-links__item"><a href="#" class="header__navbar-links__link">Личный кабинет</a></li>
+        </ul>
+        <ul class="header__navbar-links__dorms-list">
+            <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Информация</a></li>
+            <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Общежития</a></li>
+            <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Документы</a></li>
+            <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Быт</a></li>
+            <li class="header__navbar-links__dorms-item"><a href="#" class="header__navbar-links__dorms-link">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
