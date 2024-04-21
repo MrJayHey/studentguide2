@@ -11,12 +11,14 @@
 	text-align: left;
 }
 
+
+
 .links__list {
 	list-style: none;
 }
 
 .links__item {
-	margin-bottom: 20px;
+	margin-bottom: 90px;
 }
 
 .link__title {
