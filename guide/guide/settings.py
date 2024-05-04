@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     # myapps
     'hostels',
     'links',
@@ -44,6 +45,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'guide.urls'
@@ -139,6 +141,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # New variables
 
 CSRF_TRUSTED_ORIGINS = ['https://itcpd.ru', 'http://localhost:8000']
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
